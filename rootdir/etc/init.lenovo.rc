@@ -28,9 +28,9 @@ on boot
 	start factest
 # factest end
 
-# add user thermal file
+
+# Art_Chen added for DC and FOD
 on boot
-   # Art_Chen added for DC and FOD
    chmod 0666 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_bl
    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_bl
    chmod 0666 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_hbm
