@@ -1,0 +1,2 @@
+allow hal_lineage_touch_default sysfs_tp:dir search;
+allow hal_lineage_touch_default sysfp_tp:file rw_file_perms;

@@ -380,6 +380,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Touch
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.lenovo_msmnile
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
