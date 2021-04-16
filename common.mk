@@ -22,6 +22,11 @@ $(call inherit-product-if-exists, vendor/lenovo/sm8150-common/sm8150-common-vend
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+# Blur effect. Enable dynamic blur (toggle in dev options)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.surface_flinger.supports_background_blur=1 \
+    ro.sf.blurs_are_expensive=1
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
