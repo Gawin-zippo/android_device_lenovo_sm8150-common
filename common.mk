@@ -18,6 +18,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/lenovo/sm8150-common/sm8150-common-vendor.mk)
 
+# PlatformConfig
+PRODUCT_BOARD_PLATFORM := msmnile
+PRODUCT_USES_QCOM_HARDWARE := true
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
@@ -390,12 +394,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
    $(LOCAL_PATH) \
-   hardware/qcom-caf/sm8150 \
-   vendor/qcom/opensource/interfaces \
-   hardware/qcom-caf/common \
-   vendor/qcom/opensource/commonsys-intf/display \
-   vendor/qcom/opensource/data-ipa-cfg-mgr \
-   vendor/qcom/opensource/dataservices \
 
 # Touch
 PRODUCT_PACKAGES += \
