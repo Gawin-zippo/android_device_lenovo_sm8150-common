@@ -240,6 +240,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(LOCAL_PATH)/configs/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service
@@ -252,6 +253,11 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0_system \
     libhwbinder \
     libhwbinder.vendor
+
+# HALS
+SRC_AUDIO_HAL_DIR := hardware/qcom-caf/sm8150/audio
+SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/sm8150/display
+SRC_MEDIA_HAL_DIR := hardware/qcom-caf/sm8150/media
 
 # IFAA Manager
 PRODUCT_PACKAGES += \
@@ -383,7 +389,13 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+   $(LOCAL_PATH) \
+   hardware/qcom-caf/sm8150 \
+   vendor/qcom/opensource/interfaces \
+   hardware/qcom-caf/common \
+   vendor/qcom/opensource/commonsys-intf/display \
+   vendor/qcom/opensource/data-ipa-cfg-mgr \
+   vendor/qcom/opensource/dataservices \
 
 # Touch
 PRODUCT_PACKAGES += \
