@@ -182,7 +182,8 @@ PRODUCT_PACKAGES += \
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
-    LenovoParts
+    LenovoParts \
+    DeviceSettings \
 
 # Display
 PRODUCT_PACKAGES += \
