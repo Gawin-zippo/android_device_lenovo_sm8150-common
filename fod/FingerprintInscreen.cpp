@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "lineage.biometrics.fingerprint.inscreen@1.0-service.lenovo_msmnile"
+#define LOG_TAG "aospa.biometrics.fingerprint.inscreen@1.0-service.lenovo_msmnile"
 
 #include "FingerprintInscreen.h"
 
@@ -32,7 +32,7 @@
 #define DOZE_MODE_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_status"
 
 namespace vendor {
-namespace lineage {
+namespace aospa {
 namespace biometrics {
 namespace fingerprint {
 namespace inscreen {
@@ -159,5 +159,5 @@ Return<int32_t> FingerprintInscreen::getSize() {
 }  // namespace inscreen
 }  // namespace fingerprint
 }  // namespace biometrics
-}  // namespace lineage
+}  // namespace aospa
 }  // namespace vendor
