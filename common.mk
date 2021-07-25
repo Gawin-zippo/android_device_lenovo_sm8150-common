@@ -18,9 +18,11 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/lenovo/sm8150-common/sm8150-common-vendor.mk)
 
-# PlatformConfig
-PRODUCT_BOARD_PLATFORM := msmnile
-PRODUCT_USES_QCOM_HARDWARE := true
+# Platform
+BOARD_USES_QCOM_HARDWARE := true
+QCOM_BOARD_PLATFORMS += msmnile
+TARGET_BOARD_PLATFORM := msmnile
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -112,7 +114,6 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libvolumelistener \
     tinymix \
-    audio_amplifier.msmnile
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -192,7 +193,6 @@ PRODUCT_PACKAGES += \
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
-    LenovoParts \
     DeviceSettings \
 
 # Display
@@ -219,6 +219,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
+
+# Doze
+PRODUCT_PACKAGES += \
+    ParanoidDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -258,10 +262,6 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0_system \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0_system \
     libhwbinder \
     libhwbinder.vendor
 
@@ -403,9 +403,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # TextClassifier
