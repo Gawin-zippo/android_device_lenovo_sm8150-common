@@ -34,12 +34,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-ssos
+    $(LOCAL_PATH)/overlay-aospa
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-ssos/lineage-sdk \
-    $(LOCAL_PATH)/overlay-ssos/packages/apps/Snap
+    $(LOCAL_PATH)/overlay-aospa/lineage-sdk \
+    $(LOCAL_PATH)/overlay-aospa/packages/apps/Snap
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -90,7 +90,7 @@ PRODUCT_PACKAGES += \
     AntHalService-Soong \
     com.dsi.ant@1.0.vendor
 
-# Audio
+# Audio# Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@6.0-impl \
@@ -113,7 +113,8 @@ PRODUCT_PACKAGES += \
     libspkrprot \
     libtinycompress \
     libvolumelistener \
-    tinymix
+    tinymix \
+    audio_amplifier.msmnile
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -236,9 +237,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     vendor/pa/config/permissions/vendor.aospa.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.aospa.biometrics.fingerprint.inscreen.xml
 
-# FOD
-EXTRA_FOD_ANIMATIONS := true
-
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
@@ -268,11 +266,6 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0_system \
     libhwbinder \
     libhwbinder.vendor
-
-# HALS
-SRC_AUDIO_HAL_DIR := hardware/qcom-caf/sm8150/audio
-SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/sm8150/display
-SRC_MEDIA_HAL_DIR := hardware/qcom-caf/sm8150/media
 
 # IFAA Manager
 PRODUCT_PACKAGES += \
