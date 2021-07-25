@@ -34,12 +34,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aospa
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-aospa/lineage-sdk \
-    $(LOCAL_PATH)/overlay-aospa/packages/apps/Snap
+
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
