@@ -265,6 +265,11 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# HALS
+SRC_AUDIO_HAL_DIR := vendor/qcom/opensource/audio-hal/primary-hal
+SRC_DISPLAY_HAL_DIR := hardware/qcom/display
+SRC_MEDIA_HAL_DIR := hardware/qcom/media
+
 # IFAA Manager
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
